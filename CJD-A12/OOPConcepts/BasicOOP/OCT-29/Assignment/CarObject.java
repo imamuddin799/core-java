@@ -1,14 +1,14 @@
 class CarObject{
-	public static void maxPrice(Car a, Car b, Car c){
+	public static Car maxPrice(Car a, Car b, Car c){
 		System.out.println("The Details of Maxed Priced Car : ");
-		if(a.price>b.price && a.price>b.price){
-			a.details();
+		if(a.price>b.price && a.price>c.price){
+			return a;
 		}
 		else if(b.price>c.price){
-			b.details();
+			return b;
 		}
 		else{
-			c.details();
+			return c;
 		}
 	}
 	public static void main(String[] args){
@@ -33,6 +33,7 @@ class CarObject{
 		c3.topSpeed = 160;
 		c3.details();
 		System.out.println("\n**********************************\n");
-		maxPrice(c1, c2, c3);
+		Car c4 = maxPrice(c1, c2, c3);
+		c4.details();
 	}
 }
